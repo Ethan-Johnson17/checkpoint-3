@@ -1,9 +1,25 @@
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
+import { TaskList } from './Models/TaskList.js'
+
+let complete = 0
+
+
+const testTaskList = new TaskList(
+  {
+    listName: 'BCW',
+    color: 'white',
+  }
+)
 
 class AppState extends EventEmitter {
-  /** @type {import('./Models/Value').Value[]} */
-  values = []
+  // /** @type {import('./Models/Value').Value[]} */
+  // values = []
+
+  taskLists = [testTaskList,]
+
+  tasks = []
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {

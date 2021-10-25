@@ -9,30 +9,86 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>checkpoint-3</title>
+  <title>Task Master</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">checkpoint-3</span>
-      </a>
-    </nav>
+  <header class="container-fluid">
+    <div class="row text-end">
+      <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select ">
+        <h1 class="col-md-6 ms-2">Task Master</h1>
+        <div class="col-md-6">
+          <button title='create list' type="button" class="btn btn-success me-3" data-bs-toggle="modal"
+            data-bs-target="#form-modal" id="form-button">Add List
+            <i class="mdi mdi-plus"></i>
+          </button>
+
+        </div>
+      </nav>
+    </div>
   </header>
   <main>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+      <div class="row" id="taskLists">
+        <!-- <div class="col-md-3 bg-light shadow rounded p-3 m-5">
+          <div class="card ">
+            <h5 class="card-header">Listname</h5>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item
+                  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">X</label>
+                  </div>
+                </li>
+                <li class="list-group-item">A second item
+                  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">X</label>
+                  </div>
+                </li>
+                <li class="list-group-item">A third item
+                  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">X</label>
+                  </div>
+                </li>
+              </ul>
+              <form class="row align-items-end" onsubmit="app.tasksController.createTask('${this.id}')">
+                <div class="col-10">
+                  <input type="text" class="form-control" name="ToDo" id="" aria-describedby="helpId"
+                    placeholder="add ToDo">
+                </div>
+                <button class="btn btn-dark col-2"><i class="mdi mdi-plus"></i>+ ToDo</button>
+              </form>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- Use this for alert 
+    <form>
+      <p><input type="checkbox" id="checkId"> Are you sure?</p>
+      <button type="button" class="check" onclick="check()">Yes</button>
+      <button type="button" class="uncheck" onclick="uncheck()">No</button>
+    </form> -->
+  </main>
+  <div class="modal fade" id="form-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title-slot">Create New List</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body-slot">
+          <!-- FORM GOES HERE -->
         </div>
       </div>
     </div>
-  </main>
+  </div>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made with 💖 by Codeworks</small></p>
